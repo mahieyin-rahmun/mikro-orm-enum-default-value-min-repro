@@ -23,8 +23,8 @@ export class TestEntity {
   @Property({ type: 'string' })
   name: string;
 
-  @Enum({ items: () => EState })
-  state: EState;
+  @Enum({ items: () => EState, default: EState.ACTIVE })
+  state: EState = EState.ACTIVE;
 
   @Property({ fieldName: 'created_at' })
   createdAt: Date = new Date();
